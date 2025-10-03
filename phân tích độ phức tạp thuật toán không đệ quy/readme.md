@@ -2,8 +2,12 @@
 
 Họ và tên: Hà Bùi Trọng Nghĩa <br>
 MSSV: 24520020<br>
-Nhóm: 8
+Nhóm: 8 <br>
 
+
+Họ và tên: Nguyễn Duy Khang <br>
+MSSV: 24520755 <br>
+Nhóm: 8
 ---
 
 ## Bài tập 1
