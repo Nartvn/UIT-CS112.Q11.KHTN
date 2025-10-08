@@ -48,7 +48,86 @@ Vậy độ phức tạp là: $O(n)$
 
 ## Bài tập 2
 
-fhdhagiohsdiofhjoie
+** a. Trường hợp cơ sở**
+
+* **n = 1:**
+  $( T(1) = 2 )$ vì 1 chiếc bánh có 2 mặt, mỗi mặt cần 1 phút → mất 2 phút.
+* **n = 2:**
+  $( T(2) = 2 )$, tương tự như trường hợp $( n = 1 )$, ta có thể đặt cả 2 chiếc bánh lên chảo nấu cùng lúc.
+
+**Trường hợp n > 2**
+
+Ta có thể chọn 2 cái, nấu chín cả 2 mặt (mất 2 phút) và đệ quy tính toán cho ( n - 2 ) cái còn lại.
+
+$$
+\Rightarrow T(n) = T(n - 2) + 2 \quad \text{với } T(1) = T(2) = 2
+$$
+
+** Giải hệ thức truy hồi**
+
+Dùng **phương pháp thế**:
+
+$$
+\begin{aligned} T(n) &= T(n - 2) + 2 \ &= T(n - 4) + 4 \
+&= \dots \
+&= T(\text{cơ sở}) + \frac{n}{2} \times 2 \quad (\text{cơ sở } = 1 \text{ hoặc } 2)
+\end{aligned}
+$$
+
+* Với **n chẵn**, cơ sở = 2:
+  $
+  T(n) = 2 + \frac{n - 2}{2} \times 2 = n
+  $
+* Với **n lẻ**, cơ sở = 1:
+  $T(n) = 2 + \frac{n - 1}{2} \times 2 = n + 1$
+
+➡️ **Kết luận:** $( T(n) = O(n) )$
+
+**b. Nhận xét**
+
+* Thuật toán trên **“tuần tự hóa” quá mức** quy trình: luôn chọn nấu chín hoàn chỉnh 2 bánh rồi mới chuyển sang các bánh tiếp theo → **không tận dụng tối ưu thời gian**.
+
+#### Ví dụ:
+
+Giả sử có **3 chiếc bánh** $( C_1, C_2, C_3 )$
+
+* Theo đệ quy ở trên:
+
+  * Mất 2 phút cho$ ( C_1, C_2 )$
+  * Mất thêm 2 phút cho $( C_3 )$
+    → **Tổng cộng: 4 phút**
+
+* Tuy nhiên, nếu **tận dụng nấu xen kẽ các mặt**, ta làm như sau:
+
+| Phút | Mặt được nấu                         |
+| ---- | ------------------------------------ |
+| 1    | Mặt 1 của $( C_1 )$, mặt 1 của $( C_2 )$ |
+| 2    | Mặt 2 của $( C_1 )$, mặt 1 của $( C_3 )$ |
+| 3    | Mặt 2 của $( C_2 )$, mặt 2 của $( C_3 )$ |
+
+→ **Tổng thời gian chỉ 3 phút**
+
+➡️ Thuật toán đệ quy ban đầu không tận dụng được tính chất có thể **nấu xen kẽ** để giảm thời gian chết.
+
+**c. Ý tưởng tối ưu**
+
+Tận dụng tính chất: mỗi phút chảo có thể nấu chín **2 mặt của 2 bánh bất kỳ**.
+
+* Có **n chiếc bánh**, tức là **2n mặt** cần nấu.
+* Mỗi phút nấu được **2 mặt bất kỳ**.
+* Do đó, cần ít nhất:
+  $
+  \frac{2n}{2} = n \text{ phút}
+  $
+* Sau ( n ) phút, toàn bộ công việc hoàn thành → **thuật toán tối ưu tuyệt đối**.
+
+**Demo (giả mã):**
+
+```python
+for minute in range(0, n):
+    cook(2_sides_not_yet_cooked)
+```
+
 
 ------
 
