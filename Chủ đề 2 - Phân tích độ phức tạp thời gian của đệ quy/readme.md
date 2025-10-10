@@ -48,7 +48,7 @@ Vậy độ phức tạp là: $O(n)$
 
 ## Bài tập 2
 
-** a. Trường hợp cơ sở**
+**a. Trường hợp cơ sở**
 
 * **n = 1:**
   $( T(1) = 2 )$ vì 1 chiếc bánh có 2 mặt, mỗi mặt cần 1 phút → mất 2 phút.
@@ -144,10 +144,12 @@ for minute in range(0, n):
 $$
 T(0) = 1, \quad T(n) = 2 \sum_{i=0}^{n-1} T(i), \quad (n \ge 1)
 $$
+
  **Bước 1**. Đặt hàm sinh
  $$
  G(x) = \sum_{n \ge 0} T(n)x^n
  $$
+ 
  **Bước 2**. Nhân cả hai vế truy hồi với (x^n) và lấy tổng cho $(n \ge 1)$
  $$
  \sum_{n \ge 1} T(n)x^n = 2 \sum_{n \ge 1} x^n \sum_{i=0}^{n-1} T(i)
