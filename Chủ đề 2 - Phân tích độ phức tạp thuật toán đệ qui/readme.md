@@ -26,10 +26,16 @@ def f(n):
     return f(n - 1) + 4 * n
 ```
 
-Công thức truy hồi: <br>
-***<p style="text-align:center;">
-$f(0) = 1$ <br>
-$f(n)=f(n−1)+1$ <br></p>***
+Công thức truy hồi: 
+
+$$
+f(0) = 1
+$$
+
+$$
+f(n)=f(n−1)+1
+$$
+
 Ta giải công thức trên:
 - $f(1) = f(0) + 1 = 1 + 1 = 2$
 - $f(2) = f(1) + 1 = (f(0) + 1) + 1 = 3$
