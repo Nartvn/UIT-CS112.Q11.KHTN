@@ -1,4 +1,4 @@
-# Nhóm 9: Phân tích độ phức tạp thuật toán không đệ quy
+# Chủ đề 1: Phân tích độ phức tạp thuật toán không đệ quy
 
 Họ và tên: Hà Bùi Trọng Nghĩa <br>
 MSSV: 24520020<br>
