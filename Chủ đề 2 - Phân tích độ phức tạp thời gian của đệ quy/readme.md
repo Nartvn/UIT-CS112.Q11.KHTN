@@ -115,10 +115,7 @@ Tận dụng tính chất: mỗi phút chảo có thể nấu chín **2 mặt c�
 
 * Có **n chiếc bánh**, tức là **2n mặt** cần nấu.
 * Mỗi phút nấu được **2 mặt bất kỳ**.
-* Do đó, cần ít nhất:
-  $
-  \frac{2n}{2} = n \text{ phút}
-  $
+* Do đó, cần ít nhất:$\frac{2n}{2} = n \text{ phút}$
 * Sau ( n ) phút, toàn bộ công việc hoàn thành → **thuật toán tối ưu tuyệt đối**.
 
 **Demo (giả mã):**
@@ -141,23 +138,28 @@ for minute in range(0, n):
     - Nhưng vì $T(n) = T(n - i - 1)$ nên có có rút gọn công thức: $T(n) = 2 \sum_{i=0}^{n-1} T(i) + O(n)$.
     - Bài toán cơ sở: $T(0) = T(1) = O(1)$
 - Giải phương trình truy hồi bằng phương pháp hàm sinh:
+
 $$
 T(0) = 1, \quad T(n) = 2 \sum_{i=0}^{n-1} T(i), \quad (n \ge 1)
 $$
 
  **Bước 1**. Đặt hàm sinh
+ 
  $$
  G(x) = \sum_{n \ge 0} T(n)x^n
  $$
- 
+
  **Bước 2**. Nhân cả hai vế truy hồi với (x^n) và lấy tổng cho $(n \ge 1)$
+
  $$
  \sum_{n \ge 1} T(n)x^n = 2 \sum_{n \ge 1} x^n \sum_{i=0}^{n-1} T(i)
  $$
+
  Vế trái:
- $$G(x) - T(0) = G(x) - 1$$
+ $G(x) - T(0) = G(x) - 1$
 
  **Bước 3**. Đổi thứ tự tổng ở vế phải
+
  $$
  \sum_{n \ge 1} x^n \sum_{i=0}^{n-1} T(i)
 = \sum_{i \ge 0} T(i) \sum_{n \ge i+1} x^n
@@ -170,14 +172,26 @@ $$
 $$
 G(x) - 1 = 2 \frac{x}{1 - x} G(x)
 $$
-$$G(x) \left( 1 - \frac{2x}{1 - x} \right) = 1$$
-$$G(x) \frac{1 - 3x}{1 - x} = 1$$
-$$\Rightarrow \boxed{G(x) = \frac{1 - x}{1 - 3x}}$$
+
+$$
+G(x) \left( 1 - \frac{2x}{1 - x} \right) = 1
+$$
+
+$$
+G(x) \frac{1 - 3x}{1 - x} = 1
+$$
+
+$$
+\Rightarrow \boxed{G(x) = \frac{1 - x}{1 - 3x}}
+$$
 
 **Bước 5**. Khai triển chuỗi
-$$\frac{1 - x}{1 - 3x} = \frac{1}{1 - 3x} - \frac{x}{1 - 3x}
+
+$$
+\frac{1 - x}{1 - 3x} = \frac{1}{1 - 3x} - \frac{x}{1 - 3x}
 = \sum_{n \ge 0} 3^n x^n - \sum_{n \ge 0} 3^n x^{n+1}
 $$
+
 So sánh hệ số của $(x^n)$:
 * Với $(n = 0): (T(0) = 1)$
 * Với $(n \ge 1): (T(n) = 3^n - 3^{n-1} = 2 \cdot 3^{n-1})$
