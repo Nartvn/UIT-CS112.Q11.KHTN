@@ -93,7 +93,7 @@ Giả sử có **3 chiếc bánh** $( C_1, C_2, C_3 )$
 
 * Theo đệ quy ở trên:
 
-  * Mất 2 phút cho$ ( C_1, C_2 )$
+  * Mất 2 phút cho $( C_1, C_2 )$
   * Mất thêm 2 phút cho $( C_3 )$
     → **Tổng cộng: 4 phút**
 
@@ -115,7 +115,7 @@ Tận dụng tính chất: mỗi phút chảo có thể nấu chín **2 mặt c�
 
 * Có **n chiếc bánh**, tức là **2n mặt** cần nấu.
 * Mỗi phút nấu được **2 mặt bất kỳ**.
-* Do đó, cần ít nhất:$\frac{2n}{2} = n \text{ phút}$
+* Do đó, cần ít nhất: $\frac{2n}{2} = n \text{ phút}$
 * Sau ( n ) phút, toàn bộ công việc hoàn thành → **thuật toán tối ưu tuyệt đối**.
 
 **Demo (giả mã):**
